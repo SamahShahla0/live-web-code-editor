@@ -2,6 +2,11 @@ document.getElementById("htmlCode").value="<div>\n\n</div>";
 document.getElementById("cssCode").value="<style>\n\n</style>";
 document.getElementById("jsCode").value="<script>\n\n</script>";
 
+document.getElementById('refreshButton').addEventListener('click', function() {
+    localStorage.clear(); // Clear all saved code
+    location.reload(); // Refresh the page
+});
+
 // Retrieve the saved code from localStorage on page load
 window.addEventListener('load', function() {
     var savedHTMLCode = localStorage.getItem('htmlCode');
